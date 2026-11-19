@@ -489,7 +489,7 @@ void NongAddPopup::setSongType(SongType type, bool memorizePrevious) {
             m_localSongMenu->setVisible(true);
             m_specialInfoNode->updateLayout();
             m_specialInput->getInputNode()->getTextLabel()->setString("Select a file");
-            if (!m_memoizedLocalInput.empty()) { m_specialInput->setString(m_memoizedLocalInput); }
+            m_specialInput->setPlaceholder("Select a file");
             break;
         }
         case SongType::HOSTED: {
@@ -497,7 +497,7 @@ void NongAddPopup::setSongType(SongType type, bool memorizePrevious) {
             m_localSongMenu->setVisible(false);
             m_specialInfoNode->updateLayout();
             m_specialInput->getInputNode()->getTextLabel()->setString("Enter a song URL");
-            if (!m_memoizedHostedInput.empty()) { m_specialInput->setString(m_memoizedHostedInput); }
+            m_specialInput->setPlaceholder("Enter a song URL");
             break;
         }
         case SongType::YOUTUBE: {

@@ -55,11 +55,10 @@ using namespace geode::prelude;
 using namespace jukebox::index;
 
 static void setInputProps(TextInput* i) {
-    i->getInputNode()->setLabelPlaceholderColor({.r = 108, .g = 153, .b = 216});
-    i->getInputNode()->setMaxLabelScale(0.7f);
-    i->getInputNode()->setLabelPlaceholderScale(0.7f);
+    i->setPlaceholderColor({108, 153, 216, 255});
+    i->setFontScale(0.7f);
+    i->setPlaceholderScale(0.7f);
 }
-
 static std::optional<std::string> parseFromFMODTag(const FMOD_TAG& tag) {
     std::string ret;
 #ifdef GEODE_IS_WINDOWS

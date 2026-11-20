@@ -37,6 +37,11 @@ else()
   message(STATUS "Found Geode: $ENV{GEODE_SDK}")
 endif()
 
+# Newer MSVC STL on the GitHub Windows runners rejects older clang-cl
+if(WIN32)
+  add_compile_definitions(_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH)
+endif()
+
 # trick clang-format / clang-tidy to include geode as <Geode/...>
 set(GEODE_SET_TARGET_AS_SYSTEM ON)
 
